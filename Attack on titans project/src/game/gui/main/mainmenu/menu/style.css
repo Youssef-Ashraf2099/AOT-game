@@ -1,0 +1,15 @@
+.button {
+    -fx-background-color: rgba(42, 45, 51, 0);
+    -fx-text-fill: #a08c00;
+    -fx-font-size: 17px;
+    -fx-padding: 15px 32px;
+    -fx-background-radius: 13;
+    -fx-font-family: "Lucida Calligraphy";
+
+}
+.button:hover, .button:pressed, .button:focused {
+    -fx-background-color: rgba(167, 144, 0, 0.04); /* Change the background color when hovered, pressed, or focused */
+    -fx-text-fill: rgba(205, 0, 0, 0.92); /* Change the text color when hovered, pressed, or focused */
+    -fx-border-color: #bc2525; /* Add a border when hovered, pressed, or focused */
+    -fx-border-width: 0px; /* Set the border width when hovered, pressed, or focused */
+}
