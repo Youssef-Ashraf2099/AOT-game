@@ -1,22 +1,80 @@
-hello and welcome i am thrilled to write this instruction to try one of my best projects in my university time and at the first part i will illustrate how to run the project and the point of the game and second part i will illustrate the game logic ** first : ++ the point of the game is applying the concept of OOP using java and Javafx to apply the frontend unfourtanlly not everything in the game is finished as i was working alone in the project and at the same time i had a lot to study and also i had a deadline for everything so basically i focused to apply the logic first correctly to avoid bug issue as the game was a graded project in my university but i did not care as for me i wanted to create the best project and actually the project is working smooth and correct but what was missing some game texture in the game it's self but i am already proud for what i did although i want to make more and better but anyway the game is playable no worries and it's fun to play and in addition we have to look forward and do better in the next upcoming projects :)
+hello and welcome i am thrilled to write this instruction to try one of my best projects in my university time and at the first part i will illustrate how to run the project and the point of the game.
 
-++:How to run you must adjust you screen display on 100% i know it's annoying but it was a mistake ;) after setting javafx on your IDE you choose from the file of menu "Intro" class to start the game and everything run smoothly
+## How to run
+You must adjust your screen display to 100%. I know it's annoying, but it was a mistake ;) After setting up JavaFX on your IDE, choose the "Intro" class to start the game.
 
-**SECOND :HOW TO PLAY
+## Setting Up JavaFX
 
-Attack on Titan: Utopia is a one-player, endless 2 , tower defense game 1 inspired by the hit anime Attack on Titan. The story of the anime revolves around how titans, gigantic humanoid creatures, emerged one day and wiped out most of humanity. The few surviving humans fled and hid behind 3 great walls that provided safe haven from the titan threats. Wall Maria is the outer wall, Wall Rose is the middle wall and Wall Sina is the inside wall. This game takes place in an imaginary scenario where the titans breached their way throughout Wall Maria and reached the northern border of Wall Rose at the Utopia District. The human forces stationed in Utopia engage the titans in battle for one last hope of preventing the titans from breaching Wall Rose. The humans fight by deploying different types of Anti-Titan weapons in order to stop the Titan’s onslaught and keep Utopia’s (and Wall Rose’s) walls safe. 1 Tower Defense Games: is a type of game where the player controls a base and the objective is to continue defending this base from incoming enemies by deploying some weapons/tools to get rid of these enemies. In our case the base we need to protect is the Utopia District Walls. 2 Endless: it means that the game will have no winning condition and the player will keep playing and defeat as many enemies as possible. 3 Space (Battle) Setting The battlefield is divided into multiple lanes, each lane will have the following:
+### Setting Up JavaFX in Eclipse
 
-A part of the wall to be defended. This wall part will have a starting HP (health points) that decreases after being attacked and if this part of the wall is destroyed, this lane will no longer be considered an active lane and will be a lost lane.
-The weapons that the player has already deployed into this lane.
-The titans that are on their way to attack the part of the wall at the end of the lane. The titans can be at different distances from the walls depending on how much they have already moved. Each titan will have a starting HP (health points) that decreases after being attacked. Each lane will have a danger level that can be calculated based on the number and types of titans inside this lane. In the player’s base, the player will have the option to see all the available types of weapons and can choose to buy and deploy them into their choice of an active lane. The player should be able to view the currently gathered resources and acquired score as well as the remaining HPs of all walls and titans as well as each titan’s distance from the wall. The player can also see the approaching titans in order, these approaching titans will be added to the lanes in the upcoming turns. The Battle has 3 phases depending on the number of turns that already passed: Early, Intense, Grumbling. 4 Enemy Characters (Titans) There are multiple types of titans in this game. However, all the titans will have some attributes in common. Each titan will have the following stats:
-HP: The health points of the titan.
-Damage: The amount of damage the titan does when attacking a wall.
-Height: The height of the titan in meters, doesn’t affect the gameplay.
-Distance from walls: How far the titan is from the walls in “Distance Unit” 3 .
-Speed: The distance that the titan moves per turn in “Distance Unit”.
-Resources value: The amount of resources that the player gains by defeating this titan
-Danger level: How much this titan affects a lane’s danger level. 3 “Distance Unit” : A special distance unit used for the sake of this game (does not necessarily translate to any realistic distance unit) 5 Thedifferenttypesoftitanswillhaveadifferentsetofstartingstats accordingtotheirtype. InAddition,someofthetitantypeshavespecial traitsthataffecthowthey behaveduringthebattle. Type SpecialTrait AbnormalTitan Performstheattackactiontwiceper turninsteadofonce ArmoredTitan Takesonly25%oftheintended damage ColossalTitan Aftereverymovement,Increasesits speedstatby1“DistanceUnit”. 6 Type HP Damage Height Speed Resources Value Danger Level Pure Titan 100 15 15 10 10 1 Abnormal Titan 100 20 10 15 15 2 Armored Titan 200 85 15 10 30 3 Colossal Titan 1000 100 60 5 60 4 Friendly Pieces (Weapons) There are multiple types of weapons in this game. However, all the weapons will have some attributes in common. Each weapon will have the following stats:
-Damage: The amount of damage the weapon does when attacking a Titan.
-Price: The amount of resources needed to purchase and deploy a weapon of this type. A specific type of weapons, called the “Volley Spread Cannon” will have a couple of extra stats:
-Min Range: The minimum range of the weapon from the wall in “Distance Unit”.
-Max Range: The maximum range of the weapon from the wall in “Distance Unit”. 7 Thedifferenttypesofweaponswillhaveadifferentsetofstartingstats accordingtotheirtype. WeaponType Price Damage Weapon Name Min Range Max Range Piercing Cannon 25 10 Anti-Titan Shell-- Sniper Cannon 25 35 LongRange Spear-- VolleySpread Cannon 100 5 WallSpread Cannon 20 50 WallTrap 75 100 ProximityTrap-- All theweaponstypebehaveuniquelywhileperformingtheirattack actions. WeaponType AttackAction(perturn) PiercingCannon Attackstheclosest5titanstothe wallontheweapon’slane. SniperCannon Attacksthefirstclosesttitantothe wallontheweapon’slane. VolleySpreadCannon Attackall thetitansinbetweenthe weapon’sminandmaxrangeson theweapon’slane. WallTrap Attacksonlyonetitanthathas alreadyreachedthewalls(ifmore thanonehavealreadyreachedonly thefirstoneisattacked) 8 Game Rules Winning and losing Conditions: The game will have no winning condition and the player will keep playing and defeat as many enemies as possible. The player loses when all the starting lanes become lost lanes (All their Wall Parts are destroyed) and the accumulated score by then is the player’s final score. Titan Movement: Each turn, every titan inside all of the active lanes that has not reached the walls yet will move closer to the wall (The distance from the wall will decrease) a distance equal to their speed stat. Note that Colossal titans gain an extra speed of 1 “Distance Unit” per movement action. Attack Actions: Both Titans and Weapons are able to perform attack actions: 1- Titans: Each turn, only titans inside active lanes that have already reached the wall (distance from wall is 0) will perform their attack action on the wall part of their lane (reducing the Wall Part’s HP by the amount of that Titan’s damage). Note that Abnormal Titans perform their attack actions twice per turn. 2- Weapons: Each turn, only weapons that are deployed into active lanes will perform their attack action on the titans their lane (reducing the Titans’ HP by the amount of that Weapon’s damage). Each weapon will follow the above weapons table on which titans to attack. Defeated Attack Targets: Since Titans and Wall Parts can be attacked, they can be defeated/destroyed. This happens when the attack target’s HP is dropped to 0 or below as a result of an attack. Defeated Titans are removed from the lanes they were in (and the game) and their resources 9 value is added to the player’s gathered resources as well as the player’s score (score increases with the same value as the gathered resources). If a Wall Part is destroyed, the lane with this Wall Part is then marked as a Lost Lane and not an active Lane. Lost Lanes can not have weapons deployed to them nor will have any more Titans spawning in them. Approaching Titans: This is a queue of titans that are not yet added to any lane. However, it is used to decide which Titan types will be added to the active lanes each turn. Whenever it is time to add a new Titan to an active lane, the titan at the front of this approaching titans queue is removed and then added to the intended lane. If the queue is empty while attempting to remove a titan, then the queue is refilled with multiple titans according to the below table. Titans Spawning & Battle Phase change: Each turn, A specific number of titans (Initially 1) is removed from the Approaching Titans and added to the lane with the least danger level. A Lane’s danger level is the sum of all the titans’ danger levels inside this lane. If, while attempting to get an approaching titan, all of the approaching titans have been added into lanes (Empty queue), the approaching titans will refill according to the following table (If the battle phases has changed while some approaching titans still remain, the approaching titans will not refill till all of them are added to lanes and then refilled according to the battle phase at the moment of refill). The table also shows how the battle phase and the number of titans to be added into the lanes change based on the elapsed number of turns. 10 turns Battle Phase #Titans Per Turn initial EARLY 1 Approaching Titans Refill (Front —> Back) Pure, Pure, Pure, Abnormal, Pure, Armored, Colossal 15 30 35 INTENSE GRUMBLING 1 1 2 (then doubles every 5 turns) Abnormal, Abnormal, Abnormal, Pure, Armored, Armored, Colossal Colossal, Colossal, Colossal, Colossal, Colossal, Colossal, Colossal, Weapon Purchase: The player will have the option to see all the available types of weapons and can choose to buy and deploy them into their choice of an active lane. To purchase a weapon, the player should have enough resources (higher than the weapon’s price) and then the weapon’s price is deducted from the gathered resources. Turn Actions: Each turn the player can choose to either Purchase and Deploy a Weapon or pass their turn without any actions. Either way the turn will proceed as follows. After the player’s action, The titans will do their move action. Then the weapons will do their attack action followed by the titans’ attack actions. After that, Titans will be added to the lanes according to the logic mentioned above. Finally, finalizing the turn by updating the battle phase and the relevant info if needed based on the number of elapsed turns, also according to the logic mentioned above
+1. **Download JavaFX SDK**:
+   - Go to the [Gluon website](https://gluonhq.com/products/javafx/) and download the JavaFX SDK for your operating system.
+   - Extract the downloaded SDK to a convenient location on your computer.
+
+2. **Configure Eclipse**:
+   - Open Eclipse and go to `Window` > `Preferences`.
+   - Navigate to `Java` > `Build Path` > `User Libraries` and click `New`.
+   - Name the new library `JavaFX` and click `OK`.
+   - Select the newly created `JavaFX` library and click `Add External JARs`.
+   - Add all the JAR files from the `lib` folder of the extracted JavaFX SDK.
+   - Click `OK` to save the changes.
+
+3. **Create a JavaFX Project**:
+   - Create a new Java project in Eclipse.
+   - Right-click on the project, select `Properties`, and go to `Java Build Path`.
+   - Click on the `Libraries` tab and then `Add Library`.
+   - Select `User Library` and add the `JavaFX` library you created earlier.
+   - Click `Apply and Close`.
+
+4. **Set VM Arguments**:
+   - Right-click on your project, select `Run As` > `Run Configurations`.
+   - Under the `Arguments` tab, add the following to `VM arguments`:
+     ```
+     --module-path "path-to-javafx-sdk/lib" --add-modules javafx.controls,javafx.fxml
+     ```
+   - Replace `path-to-javafx-sdk` with the actual path to your extracted JavaFX SDK.
+
+### Setting Up JavaFX in IntelliJ
+
+1. **Download JavaFX SDK**:
+   - Go to the [Gluon website](https://gluonhq.com/products/javafx/) and download the JavaFX SDK for your operating system.
+   - Extract the downloaded SDK to a convenient location on your computer.
+
+2. **Configure IntelliJ**:
+   - Open IntelliJ and create a new Java project.
+   - Go to `File` > `Project Structure` > `Libraries` and click `+`.
+   - Select `Java` and add all the JAR files from the `lib` folder of the extracted JavaFX SDK.
+   - Click `OK` to save the changes.
+
+3. **Add VM Options**:
+   - Go to `Run` > `Edit Configurations`.
+   - Under `VM options`, add the following:
+     ```
+     --module-path "path-to-javafx-sdk/lib" --add-modules javafx.controls,javafx.fxml
+     ```
+   - Replace `path-to-javafx-sdk` with the actual path to your extracted JavaFX SDK.
+
+## How to play
+
+Attack on Titan: Utopia is a one-player, endless tower defense game inspired by the hit anime Attack on Titan. The story of the anime revolves around how titans, gigantic humanoid creatures, attack the walls protecting humanity.
+
+- A part of the wall to be defended. This wall part will have a starting HP (health points) that decreases after being attacked and if this part of the wall is destroyed, this lane will no longer be defended.
+- The weapons that the player has already deployed into this lane.
+- The titans that are on their way to attack the part of the wall at the end of the lane. The titans can be at different distances from the walls depending on how much they have already moved. Each titan has the following stats:
+  - HP: The health points of the titan.
+  - Damage: The amount of damage the titan does when attacking a wall.
+  - Height: The height of the titan in meters, doesn’t affect the gameplay.
+  - Distance from walls: How far the titan is from the walls in “Distance Unit”.
+  - Speed: The distance that the titan moves per turn in “Distance Unit”.
+  - Resources value: The amount of resources that the player gains by defeating this titan.
+  - Danger level: How much this titan affects a lane’s danger level.
+  - A special distance unit used for the sake of this game (does not necessarily translate to any realistic distance).
+
+- The different types of weapons will have a different set of starting stats according to their type, including:
+  - Weapon Type
+  - Price
+  - Damage
+  - Minimum Range
+  - Maximum Range
+
+Enjoy defending humanity from the titans!
